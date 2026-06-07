@@ -20,7 +20,7 @@
 ### Dashboard
 ![Dashboard](public/screenshots/dashboard.png)
 
-### Document View Page (QR Scan)
+### Document View Page (after QR scan)
 ![Document View](public/screenshots/doc-view.png)
 
 ## 🛠️ Tech Stack
