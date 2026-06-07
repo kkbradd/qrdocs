@@ -14,14 +14,14 @@
 
 ## 📸 Screenshots
 
-### QR Code Modal
-![QR Code Modal](public/screenshots/qr-modal.png)
-
-### Document View Page
-![Document View](public/screenshots/doc-view.png)
+### Login
+![Login](public/screenshots/login.png)
 
 ### Dashboard
 ![Dashboard](public/screenshots/dashboard.png)
+
+### Document View Page (QR Scan)
+![Document View](public/screenshots/doc-view.png)
 
 ## 🛠️ Tech Stack
 
