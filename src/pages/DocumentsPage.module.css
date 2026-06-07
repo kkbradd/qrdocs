@@ -1,0 +1,194 @@
+.page { display: flex; flex-direction: column; gap: 20px; width: 100%; }
+
+.header { display: flex; align-items: center; justify-content: space-between; }
+.header h1 { font-size: 26px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+.header p { font-size: 14px; color: var(--text-muted); }
+
+.searchWrap {
+  display: flex; align-items: center; gap: 10px;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 10px 14px;
+  transition: border-color 0.15s; max-width: 400px;
+}
+.searchWrap:focus-within { border-color: var(--gold-border); }
+.searchWrap input {
+  background: none; border: none; color: var(--text);
+  font-size: 14px; flex: 1;
+}
+.searchWrap input::placeholder { color: var(--text-dim); }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: 16px;
+}
+
+.card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 20px;
+  display: flex; flex-direction: column; gap: 8px;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.card:hover { border-color: var(--gold-border); transform: translateY(-2px); }
+
+.cardTop { display: flex; align-items: center; justify-content: space-between; min-height: 24px; }
+
+.typeTag {
+  font-size: 11px; font-weight: 600; color: var(--gold);
+  background: var(--gold-muted); padding: 3px 10px; border-radius: 20px;
+}
+
+.qrBadge {
+  display: flex; align-items: center; gap: 4px;
+  font-size: 11px; font-weight: 600; color: #34D399;
+  background: rgba(52,211,153,0.1); padding: 3px 8px; border-radius: 20px;
+}
+
+.cardTitle { font-size: 15px; font-weight: 600; color: var(--text); line-height: 1.4; }
+.cardMeta { font-size: 12px; color: var(--text-muted); }
+.cardDesc { font-size: 12px; color: var(--text-dim); line-height: 1.5; }
+.cardDate { font-size: 11px; color: var(--text-dim); }
+
+.cardStats {
+  display: flex; gap: 12px; margin-top: 2px;
+}
+.cardStats span {
+  display: flex; align-items: center; gap: 4px;
+  font-size: 12px; color: var(--text-dim);
+}
+
+.cardActions {
+  display: flex; gap: 8px; margin-top: 8px;
+  padding-top: 12px; border-top: 1px solid var(--border);
+}
+
+.qrBtn, .dlBtn {
+  display: flex; align-items: center; gap: 6px; justify-content: center;
+  font-size: 12px; font-weight: 600; padding: 8px 12px;
+  border-radius: 8px; transition: all 0.15s; flex: 1;
+}
+.qrBtn {
+  background: var(--gold-muted); color: var(--gold);
+  border: 1px solid var(--gold-border);
+}
+.qrBtn:hover { background: rgba(201,168,76,0.2); }
+.dlBtn {
+  background: var(--surface-2); color: var(--text-muted);
+  border: 1px solid var(--border);
+}
+.dlBtn:hover { color: var(--text); border-color: var(--gold-border); }
+
+.skeleton {
+  height: 200px; background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); animation: pulse 1.5s ease-in-out infinite;
+}
+
+.empty {
+  display: flex; flex-direction: column; align-items: center;
+  gap: 12px; padding: 60px 0; color: var(--text-dim);
+}
+.empty p { font-size: 15px; font-weight: 500; color: var(--text-muted); }
+
+/* Modal */
+.overlay {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.75); backdrop-filter: blur(6px);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 200;
+}
+
+.modal {
+  background: var(--surface); border: 1px solid var(--gold-border);
+  border-radius: var(--radius-lg); padding: 32px;
+  max-width: 380px; width: 92%;
+  display: flex; flex-direction: column; align-items: center; gap: 12px;
+  box-shadow: 0 0 40px rgba(201,168,76,0.1);
+  position: relative;
+}
+
+.modalClose {
+  position: absolute; top: 14px; right: 14px;
+  background: var(--surface-2); color: var(--text-muted);
+  border: 1px solid var(--border); border-radius: 8px;
+  width: 32px; height: 32px;
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.15s;
+}
+.modalClose:hover { color: var(--text); border-color: var(--gold-border); }
+
+.modal h3 { font-size: 17px; font-weight: 700; color: var(--text); text-align: center; }
+.modalSub { font-size: 13px; color: var(--text-muted); }
+
+.qrWrap { margin: 8px 0; }
+
+.qrImg {
+  width: 200px; height: 200px; border-radius: 12px;
+  background: white; padding: 8px; display: block;
+}
+
+.qrPlaceholder {
+  width: 200px; height: 200px; background: var(--surface-2);
+  border-radius: 12px; border: 1px dashed var(--gold-border);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 8px;
+  color: var(--text-dim); font-size: 13px;
+}
+.qrPlaceholder small { font-size: 11px; }
+
+.urlRow {
+  width: 100%;
+  display: flex; align-items: center; gap: 8px;
+  background: var(--surface-2); border: 1px solid var(--border);
+  border-radius: 8px; padding: 8px 12px; cursor: pointer;
+  transition: border-color 0.15s;
+}
+.urlRow:hover { border-color: var(--gold-border); }
+.urlText {
+  font-size: 11px; color: var(--text-dim); flex: 1;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.copyHint {
+  font-size: 11px; color: var(--gold); font-weight: 600;
+  flex-shrink: 0;
+}
+
+.modalActions {
+  display: flex; gap: 10px; width: 100%;
+}
+
+.deleteIconBtn {
+  background: none;
+  color: var(--text-dim);
+  display: flex;
+  align-items: center;
+  padding: 4px;
+  border-radius: 6px;
+  transition: color 0.15s, background 0.15s;
+  margin-left: auto;
+}
+.deleteIconBtn:hover { color: var(--error); background: rgba(239,68,68,0.1); }
+
+.deleteBtn {
+  flex: 1; text-align: center; padding: 10px;
+  border-radius: var(--radius); font-size: 13px; font-weight: 600;
+  display: flex; align-items: center; justify-content: center; gap: 6px;
+  background: rgba(239,68,68,0.15); border: 1px solid rgba(239,68,68,0.3);
+  color: var(--error); transition: all 0.15s;
+}
+.deleteBtn:hover { background: rgba(239,68,68,0.25); }
+
+.dlQrBtn, .previewBtn {
+  flex: 1; text-align: center; padding: 10px;
+  border-radius: var(--radius); font-size: 13px; font-weight: 600;
+  transition: all 0.15s;
+}
+.dlQrBtn {
+  background: var(--gold-muted); border: 1px solid var(--gold-border); color: var(--gold);
+}
+.dlQrBtn:hover { background: rgba(201,168,76,0.2); }
+.previewBtn {
+  background: var(--surface-2); border: 1px solid var(--border); color: var(--text-muted);
+}
+.previewBtn:hover { color: var(--text); border-color: var(--gold-border); }
+
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
